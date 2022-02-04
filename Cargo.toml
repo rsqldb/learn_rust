@@ -6,8 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
 
 [workspace]
 members = [
-"20220129_grep/grep"
+    "20220129_grep/grep",
+    "20220131_release/profile",
+    "20220202_mq/tonic_example",
 ]
+
+[profile.dev]
+opt-level = 0
